@@ -7,13 +7,13 @@ import asyncio
 import struct
 import os
 os.environ["SERPER_API_KEY"] = "" # 你的serper key
-openai_api_key = ""  # 你的openai key
-PICOVOICE_API_KEY = ""  # 你的picovoice key
-keyword_path = './speechmodules/Hey-Murphy_en_mac_v2_1_0.ppn'  # 你的唤醒词检测离线文件地址
+openai_api_key = "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"  # 你的openai key
+PICOVOICE_API_KEY = "mb/jkXaeNSxNVitFlVJyjqq9SCmX7xUIsjNez5Sxn9fIQ6rqXAEVVg=="  # 你的picovoice key
+keyword_path = './speechmodules/Hey-berry_en_windows_v2_2_0.ppn'  # 你的唤醒词检测离线文件地址
 model_path = '' # 中文模型地址
-Baidu_APP_ID = ''  # 你的百度APP_ID
-Baidu_API_KEY = ''  # 你的百度API_KEY
-Baidu_SECRET_KEY = ''  # 你的百度SECRET_KEY
+Baidu_APP_ID = '33705556'  # 你的百度APP_ID
+Baidu_API_KEY = '9Hbrhd767L6sXt2kZGi6gcsz'  # 你的百度API_KEY
+Baidu_SECRET_KEY = '5GwLbL29z414MfxjvMGxjIp76qoLihv9'  # 你的百度SECRET_KEY
 AZURE_API_KEY = ""  # 你的azure key
 AZURE_REGION = ""  # 你的azure region
 
@@ -44,10 +44,10 @@ def run(picowakeword, asr, tts, openai_chat_module):
 
 def Orator():
     picowakeword = PicoWakeWord(PICOVOICE_API_KEY, keyword_path)
-    asr = AzureASR(AZURE_API_KEY, AZURE_REGION)
-    tts = AzureTTS(AZURE_API_KEY, AZURE_REGION)
-    # asr = OpenaiASR(openai_api_key)
-    # tts = EdgeTTS()
+    # asr = AzureASR(AZURE_API_KEY, AZURE_REGION)
+    # tts = AzureTTS(AZURE_API_KEY, AZURE_REGION)
+    asr = OpenaiASR(openai_api_key)
+    tts = EdgeTTS()
     ##openai_chat_module = OpenaiChatModule(openai_api_key)
     openai_chat_module = OpenaiAgentModule(openai_api_key)
     try:
