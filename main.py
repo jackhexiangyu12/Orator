@@ -46,8 +46,9 @@ def Orator():
     picowakeword = PicoWakeWord(PICOVOICE_API_KEY, keyword_path)
     # asr = AzureASR(AZURE_API_KEY, AZURE_REGION)
     # tts = AzureTTS(AZURE_API_KEY, AZURE_REGION)
-    asr = OpenaiASR(openai_api_key)
+    # asr = OpenaiASR(openai_api_key)
     tts = EdgeTTS()
+    asr = BaiduASR(Baidu_APP_ID,Baidu_API_KEY,Baidu_SECRET_KEY)
     ##openai_chat_module = OpenaiChatModule(openai_api_key)
     openai_chat_module = OpenaiAgentModule(openai_api_key)
     try:
