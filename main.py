@@ -17,8 +17,6 @@ Baidu_SECRET_KEY = '5GwLbL29z414MfxjvMGxjIp76qoLihv9'  # 你的百度SECRET_KEY
 AZURE_API_KEY = ""  # 你的azure key
 AZURE_REGION = ""  # 你的azure region
 
-
-
 def run(picowakeword, asr, tts, openai_chat_module):
     while True:  # 需要始终保持对唤醒词的监听
         audio_obj = picowakeword.stream.read(picowakeword.porcupine.frame_length, exception_on_overflow=False)
